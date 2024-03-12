@@ -30,34 +30,54 @@ library(linktree)
 #> The following object is masked from 'package:base':
 #> 
 #>     gamma
-## basic example code
+# Transmission tree data: who infected whom?
 from <- sample(c("A", "B"), 1000, replace = TRUE, prob = c(0.5, 0.5))
 to <- sample(c("A", "B"), 1000, replace = TRUE, prob = c(0.5, 0.5))
-```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+#Metadata: groups and relative sizes
+levels = c("A", "B")
+f = c(0.5, 0.5)
+```
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+pi_values <- pi(from, to, levels)
+gamma_values <- gamma(pi_values, f)
+
+#convert gamma to delta
+gamma2delta(gamma_values)
+#>           A           B 
+#> -0.08764940 -0.04819277
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+Relationship between gamma and delta
 
-You can also embed plots, for example:
+``` r
+gamma_values <- seq(0, 100, 0.1)
+delta_values <- gamma2delta(gamma_values)
+plot(gamma_values, delta_values, type = "l", xlab = "Gamma", ylab = "Delta")
+```
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Relationship between pi, f and delta:
+
+``` r
+grid <- expand.grid(f = seq(0.01, 0.99, 0.01), 
+                    pi = seq(0, 1, 0.01))
+grid$delta<- gamma2delta(
+  gamma(pi = grid$pi, f = grid$f)
+)
+
+library(ggplot2)
+ggplot(grid, aes(x = pi, y = f, fill = delta)) +
+  geom_raster() +
+  scale_fill_gradient2(
+    low = "purple",
+    mid = "white",
+    high = "orange",
+    midpoint = 0
+  ) +
+  theme_minimal()
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
