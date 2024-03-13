@@ -1,13 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# linktree
+# linktree: untangling links between groups in your transmission tree
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of linktree is to estimate the transmission assorativity
-coefficient.
+`Linktree` assesses the group's transmission **link**s from the transmission **tree**. Its goal is to estimate the *transmission assortativity coefficient*, quantifying the tendency of transmission to occur within a given group versus other groups.
 
 ## Installation
 
