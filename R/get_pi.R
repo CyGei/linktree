@@ -23,7 +23,9 @@ get_pi <- function(from, to, alpha = 0.05) {
   trials <- rowSums(ttab)
   group <- rownames(ttab)
   pi <- binom_test(x = success, n = trials, alpha = alpha)
-  return(data.frame(group, pi, row.names = NULL))
+  pi <- data.frame(group, pi, row.names = NULL)
+  class(pi) <- c("pi", "linktree", "data.frame")
+  return(pi)
 }
 
 

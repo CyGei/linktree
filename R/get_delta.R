@@ -32,6 +32,6 @@ get_delta <- function(from, to, f, alpha = 0.05) {
     row.names = NULL
   )
 
-  class(delta) <- c("delta", "assortativity", "data.frame")
+  class(delta) <- c("delta", "linktree", "data.frame")
   return(delta)
 }

@@ -1,9 +1,9 @@
-#' Plot Assortativity Objects
+#' Plot linktree objects
 #'
-#' Plots error bars for objects of class "assortativity" (with subclasses "gamma" and "delta").
+#' Plots error bars for objects of class "linktree" (with subclasses "gamma", "delta" or "pi").
 #' The plot includes a horizontal dotted line at y = 1 for subclass "gamma" and y = 0 for subclass "delta", referring to the neutral value.
 #'
-#' @param x An object of class "assortativity" (with subclass "gamma" or "delta").
+#' @param x An object of class "linktree" (with subclass "gamma" or "delta").
 #' @param ... Additional arguments passed to the base `plot` function.
 #'
 #' @examples
@@ -13,12 +13,12 @@
 #' plot(get_delta(from, to, f))
 #' plot(get_gamma(from, to, f))
 #'
-#' @method plot assortativity
+#' @method plot linktree
 #' @export
 #' @importFrom graphics abline arrows axis
 #'
 
-plot.assortativity <- function(x, ...) {
+plot.linktree <- function(x, ...) {
   groups <- x$group
   est <- ifelse(is.infinite(x$est), 1000, x$est)
   lwr <- ifelse(is.infinite(x$lwr), 1000, x$lwr)
@@ -34,6 +34,9 @@ plot.assortativity <- function(x, ...) {
   } else if (subclass == "delta") {
     ylab <- "Delta"
     ylim <- c(-1, 1)
+  } else if (subclass == "pi") {
+    ylab <- "Pi"
+    ylim <- c(0, 1)
   }
 
   plot(x_values, est, xlim = c(0.5, length(groups) + 0.5),

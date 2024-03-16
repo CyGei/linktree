@@ -32,7 +32,7 @@ get_gamma <- function(from, to, f, alpha = 0.05) {
     row.names = NULL
   )
 
-  class(gamma) <- c("gamma", "assortativity", "data.frame")
+  class(gamma) <- c("gamma", "linktree", "data.frame")
   return(gamma)
 }
 
