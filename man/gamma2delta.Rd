@@ -2,18 +2,18 @@
 % Please edit documentation in R/gamma2delta.r
 \name{gamma2delta}
 \alias{gamma2delta}
-\title{Convert Gamma to Delta}
+\title{Convert gamma to delta}
 \usage{
 gamma2delta(gamma)
 }
 \arguments{
-\item{gamma}{A numeric value representing the gamma parameter.}
+\item{gamma}{A numeric vector of gamma coefficients.}
 }
 \value{
-A numeric value representing the delta parameter.
+A numeric vector delta coefficients.
 }
 \description{
-Converts a gamma value to a delta value.
+Convert gamma to delta
 }
 \examples{
 gamma2delta(gamma = c(0,1,10, Inf))
