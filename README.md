@@ -155,7 +155,7 @@ delta
 Group-level saturation (i.e. the depletion of susceptibles) can
 significantly impact the estimation of the transmission assortativity
 coefficient. To account for this, we should estimate the transmission
-assortativity coefficient before the epidemic peak (i.e. before day 17).
+assortativity coefficient up to the epidemic peak (i.e. day 17).
 
 ``` r
 cut_tree <- simulated_tree %>%
