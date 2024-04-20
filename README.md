@@ -137,10 +137,6 @@ plot(est_delta)+
 abline(h = true_delta, col = c("orange", "purple"), lty = 2)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" />
-
-    #> integer(0)
-
 For more information regarding when to estimate transmission
 assortativity, click on this
 [link](https://www.medrxiv.org/content/10.1101/2024.03.13.24304225v1).
