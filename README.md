@@ -14,7 +14,8 @@ linktree
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/CyGei/linktree/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CyGei/linktree/actions/workflows/R-CMD-check.yaml)
-
+[![Codecov test
+coverage](https://codecov.io/gh/CyGei/linktree/graph/badge.svg)](https://app.codecov.io/gh/CyGei/linktree)
 <!-- badges: end -->
 
 `linktree` is a novel framework that leverages transmission chain data
@@ -27,7 +28,7 @@ others. The methodology is described in our
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("CyGei/linktree")
+# devtools::install_github("CyGei/linktree")
 library(linktree)
 ```
 

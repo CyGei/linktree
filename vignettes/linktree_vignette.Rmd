@@ -28,9 +28,7 @@ The goal of `linktree` is to estimate the transmission assortativity coefficient
 ## Installation
 
 ```{r}
-library(remotes)
-remotes::install_github("CyGei/linktree")
-library(linktree)
+pacman::p_load_gh("CyGei/linktree")
 ```
 
 ## Understanding the transmission assortativity coefficient
@@ -83,39 +81,26 @@ points(1, 0, col = "red", pch = 16)  # Homogeneous
 
 ### Data
 
-We can simulate an outbreak with multiple groups using the [`o2groups`](https://github.com/CyGei/o2groups) package and then use `linktree` to estimate the assortativity coefficients from the transmission tree.
+We can simulate an outbreak with multiple groups using the [`o2groups`](https://github.com/CyGei/o2groups) package and then use `linktree` to estimate the assortativity coefficients from the transmission tree. Below is a pre-loaded simulated transmission tree, see `?sim_tree` for more details.
 
 ```{r}
-remotes::install_github("CyGei/o2groups")
-library(o2groups)
-true_gamma <- c(2, 0.8) # assortativity coefficients
-
-set.seed(123)
-sim <- simulate_groups(
-  duration = 100,
-  group_n = 2,
-  size = c(100, 400),
-  name = c("HCW", "patient"),
-  gamma = true_gamma,
-  intro_n = c(1, 3),
-  r0 = c(1.7, 2),
-  generation_time = c(0, 0.1, 0.2, 0.4, 0.2, 0.1, 0),
-  incubation_period = sample(1:14, 1000, replace = TRUE)
-)
-head(sim)
+#?sim_tree
+true_gammas <- c(HCW = 2, patient = 1/1.25)
+sizes <- c(HCW = 100, patient = 350)
+data(sim_tree)
+head(sim_tree)
 ```
 
 ### Visualise the transmission tree
 
-```{r, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
 remotes::install_github('reconhub/epicontacts@timeline')
-library(dplyr)
 library(epicontacts)
 library(visNetwork)
 
 x <- epicontacts::make_epicontacts(
-  linelist = dplyr::select(sim, c(group, id, date_infection, date_onset)),
-  contacts = dplyr::select(sim, c(source, id, source_group, group)),
+  linelist = sim_tree[, c("group", "id", "date_infection", "date_onset")],
+  contacts = sim_tree[, c("source", "id", "source_group", "group")],
   id = "id",
   from = "source",
   to = "id",
@@ -140,20 +125,18 @@ plot(x,
 ```
 
 ### Estimate the transmission assortativity coefficient
-
-
 Our published [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037) provides guidelines as to when and under which circumstances we can reliably infer group transmission assortativity. Notably, we should analyse transmission chains up to the group's epidemic peak to avoid the saturation effect, and we should have at least ~30 cases in the group.
 
 ```{r, fig.width=8, fig.height=6, message=FALSE}
 est_delta <- get_delta(
-  from = sim$source_group,
-  to = sim$group,
-  f = c("HCW" = 100, "patient" = 400),
+  from = sim_tree$source_group,
+  to = sim_tree$group,
+  f = sizes,
 )
-true_delta <- gamma2delta(true_gamma)
+true_deltas <- gamma2delta(true_gammas)
 
 plot(est_delta, main = "Estimated vs True assortativity coefficients")
-abline(h = true_delta, col = c("#d53e4f", "#3288bd"), lty = 2)
+abline(h = true_deltas, col = c("#d53e4f", "#3288bd"), lty = 2)
 legend("topright", legend = c("HCW (truth)", "patient (truth)"), fill = c("#d53e4f", "#3288bd"), bty = "n")
 ```
 

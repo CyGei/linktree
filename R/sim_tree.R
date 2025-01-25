@@ -1,12 +1,26 @@
-#'Simulated transmission tree
-#' A simulated transmission tree generated from the `o2groups` package.
+#' Simulated transmission tree
 #'
-#' This dataset represents a simulated infection transmission tree, capturing the spread of an infectious disease within groups.
+#' This dataset represents a simulated transmission tree.
 #' This simulation was generated using the R package `o2groups` (see \url{https://github.com/CyGei/o2groups} for more information).
-#' Group `A` is assortative with a delta coefficient of 0.75 and group `B` is neutral with a delta coefficient of 0.
-#' Both group sizes were set at 100 individuals.
-#'
-#' @format A data frame with 151 rows and 6 columns:
+#' Group `HCW` is assortative with a gamma coefficient of 2 and group `patient` is disassortative with a gamma coefficient of 1/1.25.
+#' Suceptible group sizes were 100 and 350, respectively.
+#' Code to reproduce the data below:
+#' ```
+#' pacman::p_load_gh("CyGei/o2groups")
+#' set.seed(123)
+#' sim_tree <- o2groups::simulate_groups(
+#'   duration = 100,
+#'   group_n = 2,
+#'   size = c(100, 350), # susceptible group sizes
+#'   name = c("HCW", "patient"),
+#'   gamma = c(2, 0.8), # assortativity coefficients
+#'   intro_n = c(1, 3),
+#'   r0 = c(2, 2),
+#'   generation_time = c(0, 0.1, 0.2, 0.4, 0.2, 0.1, 0),
+#'   incubation_period = sample(1:14, 1000, replace = TRUE)
+#' )
+#'```
+#' @format A data frame with 373 rows and 6 columns:
 #' \describe{
 #'   \item{group}{Character. The group to which the individual belongs.}
 #'   \item{id}{Character. Unique identifier for each individual in the study.}
@@ -16,4 +30,4 @@
 #'   \item{date_onset}{Numeric. The date of onset of symptoms. Represented as the number of days since the start of the study.}
 #' }
 #' @source This dataset is simulated (see R package `o2groups`) and does not correspond to real-world data.
-"simulated_tree"
+"sim_tree"
