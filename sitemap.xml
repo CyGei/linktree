@@ -1,0 +1,23 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/linktree_vignette.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/check_alpha.html</loc></url>
+<url><loc>/reference/check_delta.html</loc></url>
+<url><loc>/reference/check_flevels.html</loc></url>
+<url><loc>/reference/check_fromto.html</loc></url>
+<url><loc>/reference/check_gamma.html</loc></url>
+<url><loc>/reference/check_xn.html</loc></url>
+<url><loc>/reference/delta2gamma.html</loc></url>
+<url><loc>/reference/gamma2delta.html</loc></url>
+<url><loc>/reference/get_delta.html</loc></url>
+<url><loc>/reference/get_gamma.html</loc></url>
+<url><loc>/reference/get_pi.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/plot.linktree.html</loc></url>
+<url><loc>/reference/sim_tree.html</loc></url>
+</urlset>
+
