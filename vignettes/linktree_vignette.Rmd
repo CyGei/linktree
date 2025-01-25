@@ -142,7 +142,9 @@ plot(x,
 ### Estimate the transmission assortativity coefficient
 
 
-```{r, message=FALSE, fig.width=8, fig.height=6}
+Our published [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037) provides guidelines as to when and under which circumstances we can reliably infer group transmission assortativity. Notably, we should analyse transmission chains up to the group's epidemic peak to avoid the saturation effect, and we should have at least ~30 cases in the group.
+
+```{r, fig.width=8, fig.height=6, message=FALSE}
 est_delta <- get_delta(
   from = sim$source_group,
   to = sim$group,
@@ -153,7 +155,8 @@ true_delta <- gamma2delta(true_gamma)
 plot(est_delta, main = "Estimated vs True assortativity coefficients")
 abline(h = true_delta, col = c("#d53e4f", "#3288bd"), lty = 2)
 legend("topright", legend = c("HCW (truth)", "patient (truth)"), fill = c("#d53e4f", "#3288bd"), bty = "n")
-
 ```
 
-Our published [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037) provides guidelines as to when and under which circumstances we can reliably infer group transmission assortativity. Notably, we should analyse transmission chains up to the group's epidemic peak to avoid the saturation effect, and we should have at least ~30 cases in the group.
+
+
+
