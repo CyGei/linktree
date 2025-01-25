@@ -12,3 +12,4 @@ check_alpha(alpha)
 \description{
 Check 'alpha' value
 }
+\keyword{internal}

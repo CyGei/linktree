@@ -4,8 +4,7 @@
 \name{simulated_tree}
 \alias{simulated_tree}
 \title{Simulated transmission tree
-A simulated transmission tree generated from the o2groups package see \url{https://github.com/CyGei/o2groups} for more information.
-Simulated transmission tree}
+A simulated transmission tree generated from the \code{o2groups} package.}
 \format{
 A data frame with 151 rows and 6 columns:
 \describe{
@@ -24,7 +23,9 @@ This dataset is simulated (see R package \code{o2groups}) and does not correspon
 simulated_tree
 }
 \description{
-This dataset represents a simulated infection transmission tree, capturing
-the spread of an infectious disease within groups. This simulation was generated using the R package \code{o2groups} (see \url{https://github.com/CyGei/o2groups} for more information). Group A is assortative with a delta coefficient of 0.75 and group B is neutral with a delta coefficient of 0. Both group sizes were set at 100 individuals.
+This dataset represents a simulated infection transmission tree, capturing the spread of an infectious disease within groups.
+This simulation was generated using the R package \code{o2groups} (see \url{https://github.com/CyGei/o2groups} for more information).
+Group \code{A} is assortative with a delta coefficient of 0.75 and group \code{B} is neutral with a delta coefficient of 0.
+Both group sizes were set at 100 individuals.
 }
 \keyword{datasets}

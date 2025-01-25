@@ -14,3 +14,4 @@ check_flevels(f, levels)
 \description{
 Check 'f' levels
 }
+\keyword{internal}

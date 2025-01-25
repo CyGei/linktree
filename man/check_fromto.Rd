@@ -7,8 +7,11 @@
 check_fromto(from, to)
 }
 \arguments{
-\item{from, to}{Vectors of the same length.}
+\item{from}{A vector of infectors.}
+
+\item{to}{A vector of infectees}
 }
 \description{
 Check 'from' and 'to' vectors
 }
+\keyword{internal}

@@ -14,3 +14,4 @@ check_xn(x, n)
 \description{
 Check 'x' and 'n' values
 }
+\keyword{internal}
