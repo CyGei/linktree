@@ -34,4 +34,4 @@ library(linktree)
 
 ## Documentation
 
-For more information, check the vignette.
+For more information, check the dedicated [website](https://cygei.github.io/linktree/).
