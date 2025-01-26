@@ -27,6 +27,10 @@ The goal of `linktree` is to estimate the transmission assortativity coefficient
 
 ## Installation
 
+```{r, include=FALSE}
+devtools::load_all(".")
+```
+
 ```{r}
 pacman::p_load_gh("CyGei/linktree")
 ```
@@ -60,7 +64,7 @@ To simplify interpretation, we introduce a **rescaled** parameter $\delta$, rang
 
 We can visualise the relationship between $\gamma$ and $\delta$:
 
-```{r, fig.width=8, fig.height=6}
+```{r, fig.width=8, fig.height=6, fig.keep='last'}
 delta <- seq(-1, 1, 0.1)
 gamma <- delta2gamma(delta)
 plot(gamma, delta, type = "l")
@@ -127,7 +131,7 @@ plot(x,
 ### Estimate the transmission assortativity coefficient
 Our published [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037) provides guidelines as to when and under which circumstances we can reliably infer group transmission assortativity. Notably, we should analyse transmission chains up to the group's epidemic peak to avoid the saturation effect, and we should have at least ~30 cases in the group.
 
-```{r, fig.width=8, fig.height=6, message=FALSE}
+```{r, fig.width=8, fig.height=6, message=FALSE, fig.keep='last'}
 est_delta <- get_delta(
   from = sim_tree$source_group,
   to = sim_tree$group,
