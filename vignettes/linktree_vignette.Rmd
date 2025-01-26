@@ -27,10 +27,6 @@ The goal of `linktree` is to estimate the transmission assortativity coefficient
 
 ## Installation
 
-```{r, include=FALSE}
-devtools::load_all(".")
-```
-
 ```{r}
 pacman::p_load_gh("CyGei/linktree")
 ```
@@ -91,7 +87,8 @@ We can simulate an outbreak with multiple groups using the [`o2groups`](https://
 #?sim_tree
 true_gammas <- c(HCW = 2, patient = 1/1.25)
 sizes <- c(HCW = 100, patient = 350)
-data(sim_tree)
+# data(sim_tree) 
+sim_tree <- read.csv("https://raw.githubusercontent.com/CyGei/linktree/refs/heads/main/vignettes/sim_tree.csv")
 head(sim_tree)
 ```
 

@@ -42,4 +42,4 @@ library(linktree)
 
 ## Documentation
 
-For more information, check the vignette.
+For more information, check the deticated webiste: [linktree](https://cygei.github.io/linktree/)
