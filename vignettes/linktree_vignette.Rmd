@@ -129,7 +129,7 @@ plot(x,
 
 Our published [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037) provides guidelines as to when and under which circumstances we can reliably infer group transmission assortativity. Notably, we should analyse transmission chains up to the group's epidemic peak to avoid the saturation effect, and we should have at least \~30 cases in the group.
 
-```{r, fig.width=8, fig.height=6, message=FALSE, fig.keep='last'}
+```{r}
 est_delta <- get_delta(
   from = sim_tree$source_group,
   to = sim_tree$group,
@@ -140,4 +140,7 @@ true_deltas <- gamma2delta(true_gammas)
 plot(est_delta, main = "Estimated vs True assortativity coefficients")
 abline(h = true_deltas, col = c("#d53e4f", "#3288bd"), lty = 2)
 legend("topright", legend = c("HCW (truth)", "patient (truth)"), fill = c("#d53e4f", "#3288bd"), bty = "n")
+
 ```
+
+In this example, we estimate that patients are 1.25 times less likely to transmit to other patients, while HCWs are 1.34 times more likely to transmit to other HCWs (although none are statistically significant).

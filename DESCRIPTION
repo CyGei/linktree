@@ -1,13 +1,11 @@
 Package: linktree
-Title: Estimates Transmission Assortativity Coefficients From Transmission Trees
+Title: Estimate Transmission Assortativity Coefficients
 Version: 0.0.0.9000
 URL: https://doi.org/10.1000/journalname.paperdoi, https://cygei.github.io/linktree/
 Authors@R: 
-    c(person("Cyril", "Geismar", , "c.geismar21@imperial.ac.uk", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-8486-5890")),
-           person("Peter J.", "White", role = c("aut")),
-           person("Anne", "Cori", role = c("aut")),
-           person("Thibaut", "Jombart", role = c("aut")))
+    c(person("Cyril", "Geismar", , "c.geismar21@imperial.ac.uk", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-8486-5890"))
+           )
 Description: Estimates group transmission assortativity coefficients from data on transmission chains.
 License: CC BY 4.0
 Encoding: UTF-8
