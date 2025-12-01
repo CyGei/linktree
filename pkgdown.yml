@@ -1,9 +1,9 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
-  linktree_vignette: linktree_vignette.html
-last_built: 2025-01-26T18:19Z
+  linktree: linktree.html
+last_built: 2025-12-01T23:27Z
 urls:
   reference: https://cygei.github.io/linktree/reference
   article: https://cygei.github.io/linktree/articles

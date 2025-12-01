@@ -1,0 +1,78 @@
+# linktree
+
+`linktree` is a novel framework that estimates ***group transmission
+assortativity*** from transmission trees.
+
+## Installation
+
+You can install the development version of linktree from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("CyGei/linktree")
+```
+
+``` r
+library(linktree)
+```
+
+## Definition
+
+Group transmission assortativity quantifies the extent to which
+individuals transmit within their own group compared to others. The
+methodology is described in our
+[paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037),
+and briefly discussed on
+[YouTube](https://www.youtube.com/watch?v=Ib5dBunDPN0).
+
+The $\gamma$ coefficient ranges from 0 to $\infty$. It describes the
+excess propability of transmitting within your own group versus other
+groups. See
+[`get_gamma()`](https://cygei.github.io/linktree/reference/get_gamma.md).
+
+![gamma assortativity coefficient](reference/figures/gamma.png)
+
+gamma assortativity coefficient
+
+We can rescale $\gamma$ to the $\delta$ coefficient, which ranges from
+-1 to 1 using
+[`get_delta()`](https://cygei.github.io/linktree/reference/get_delta.md).
+
+![delta assortativity coefficient](reference/figures/delta.png)
+
+delta assortativity coefficient
+
+## Documentation
+
+`linktree` requires that you have transmission chain data (*i.e.* who
+infected whom) and group membership for each individual in the
+transmission chain.
+
+For more information, check the dedicated
+[vignette](https://cygei.github.io/linktree/articles/linktree.html).
+
+# Package index
+
+## All functions
+
+- [`delta2gamma()`](https://cygei.github.io/linktree/reference/delta2gamma.md)
+  : Convert delta to gamma
+- [`gamma2delta()`](https://cygei.github.io/linktree/reference/gamma2delta.md)
+  : Convert gamma to delta
+- [`get_delta()`](https://cygei.github.io/linktree/reference/get_delta.md)
+  : Calculate delta
+- [`get_gamma()`](https://cygei.github.io/linktree/reference/get_gamma.md)
+  : Calculate gamma
+- [`get_pi()`](https://cygei.github.io/linktree/reference/get_pi.md) :
+  Calculate Pi Values
+- [`plot(`*`<linktree>`*`)`](https://cygei.github.io/linktree/reference/plot.linktree.md)
+  : Plot linktree objects
+- [`sim_tree`](https://cygei.github.io/linktree/reference/sim_tree.md) :
+  Simulated transmission tree
+
+# Articles
+
+### All vignettes
+
+- [linktree](https://cygei.github.io/linktree/articles/linktree.md):
