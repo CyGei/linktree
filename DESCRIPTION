@@ -1,7 +1,6 @@
 Package: linktree
 Title: Estimate Transmission Assortativity Coefficients
-Version: 0.0.0.9000
-URL: https://doi.org/10.1000/journalname.paperdoi, https://cygei.github.io/linktree/
+Version: 0.0.1
 Authors@R: 
     c(person("Cyril", "Geismar", , "c.geismar21@imperial.ac.uk", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-8486-5890"))
@@ -10,7 +9,7 @@ Description: Estimates group transmission assortativity coefficients from data o
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Suggests: 
     knitr,
     rmarkdown,
@@ -23,3 +22,5 @@ Depends:
     R (>= 3.5)
 LazyData: true
 VignetteBuilder: knitr
+URL: https://github.com/CyGei/linktree, https://cygei.github.io/linktree/
+BugReports: https://github.com/CyGei/linktree/issues

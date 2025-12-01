@@ -1,8 +1,8 @@
 ---
-title: "linktree vignette"
+title: "linktree"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{linktree vignette}
+  %\VignetteIndexEntry{linktree}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 # linktree
 
-The goal of `linktree` is to estimate the transmission assortativity coefficient. More information [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037).
+The goal of `linktree` is to estimate the *group transmission assortativity coefficient*. More information [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037).
 
 ## Installation
 
@@ -31,9 +31,9 @@ The goal of `linktree` is to estimate the transmission assortativity coefficient
 pacman::p_load_gh("CyGei/linktree")
 ```
 
-## Understanding the transmission assortativity coefficient
+## Transmission assortativity
 
-The `linktree` framework uses transmission chain data to estimate *group transmission assortativity*, which **quantifies the tendency of individuals to transmit within their own group relative to other groups**.
+**Group transmission assortativity quantifies the tendency of individuals to transmit within their own group relative to other groups**.
 
 It is defined as the relative increase, or decrease, in the probability of within-group transmission compared to what would be expected under random transmission. Random transmission expectations are calculated based on the group's relative size, defined as proportion of the total susceptible population that belongs to the group.
 
@@ -54,13 +54,17 @@ $\gamma$ ranges from $0$ to $\infty$, where:
 
 For example, if $\gamma_A = 2$, individuals in group *A* are **twice** more likely to transmit within group *A* compared to other groups. Conversely, if $\gamma_A = 1/2$, individuals in group *A* are **half** as likely to transmit within group *A* compared to other groups.
 
+![](images/gamma.png)
+
 ### Delta
 
 To simplify interpretation, we introduce a **rescaled** parameter $\delta$, ranging between $-1$ (fully disassortative) and $1$ (fully assortative), with 0 indicating homogeneous patterns.
 
+![](images/delta.png)
+
 We can visualise the relationship between $\gamma$ and $\delta$:
 
-```{r, fig.width=8, fig.height=6, fig.keep='last'}
+```{r, fig.width=8, fig.height=6}
 delta <- seq(-1, 1, 0.1)
 gamma <- delta2gamma(delta)
 plot(gamma, delta, type = "l")
@@ -75,7 +79,7 @@ points(1, 0, col = "red", pch = 16)  # Homogeneous
 
 -   `to`: a vector of infectee's group.
 
--   `f`: a named vector of the groups' sizes or relative sizes (*i.e.* proportion of the population in each group).
+-   `f`: a named vector of the groups' sizes or relative sizes (*i.e.* proportion of the susceptible population in each group).
 
 ## Example
 

@@ -1,4 +1,11 @@
 url: https://cygei.github.io/linktree/
 template:
   bootstrap: 5
-
+  bslib:
+    bootswatch: lux
+    pkgdown-nav-height: 100px
+repo:
+  url:
+    home: https://github.com/CyGei/linktree
+    issue: https://github.com/CyGei/linktree/issues
+    user: https://github.com/CyGei
