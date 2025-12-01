@@ -64,4 +64,4 @@ infected whom) and group membership for each individual in the
 transmission chain.
 
 For more information, check the dedicated
-[vignette](https://cygei.github.io/linktree/articles/linktree_vignette.html).
+[vignette](https://cygei.github.io/linktree/articles/linktree.html).

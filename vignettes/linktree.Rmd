@@ -99,9 +99,7 @@ head(sim_tree)
 ### Visualise the transmission tree
 
 ```{r, message=FALSE, warning=FALSE}
-#remotes::install_github('reconhub/epicontacts@timeline')
 library(epicontacts)
-library(visNetwork)
 
 x <- epicontacts::make_epicontacts(
   linelist = sim_tree[, c("group", "id", "date_infection", "date_onset")],
@@ -114,7 +112,6 @@ x <- epicontacts::make_epicontacts(
 
 plot(x,
     method = "visNetwork",
-    x_axis = "date_infection",
     label = FALSE,
     node_color = "group", 
     node_shape = "group",
@@ -124,9 +121,7 @@ plot(x,
     node_size = 20,
     col_pal = epicontacts::spectral,
     edge_col_pal = epicontacts::spectral
-  ) %>%
-  visNetwork::visEdges(shadow = TRUE,
-                       arrows = list(to = list(enabled = TRUE, scaleFactor = 0.1))) 
+  )
 ```
 
 ### Estimate the transmission assortativity coefficient
