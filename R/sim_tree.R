@@ -6,7 +6,7 @@
 #' Suceptible group sizes were 100 and 350, respectively.
 #' Code to reproduce the data below:
 #' ```
-#' pacman::p_load_gh("CyGei/o2groups")
+#' pak::pak("CyGei/o2groups")
 #' set.seed(123)
 #' sim_tree <- o2groups::simulate_groups(
 #'   duration = 100,
