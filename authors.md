@@ -8,13 +8,13 @@
 ## Citation
 
 Geismar C (2025). *linktree: Estimate Transmission Assortativity
-Coefficients*. R package version 0.0.1,
+Coefficients*. R package version 0.1.0,
 <https://github.com/CyGei/linktree>.
 
     @Manual{,
       title = {linktree: Estimate Transmission Assortativity Coefficients},
       author = {Cyril Geismar},
       year = {2025},
-      note = {R package version 0.0.1},
+      note = {R package version 0.1.0},
       url = {https://github.com/CyGei/linktree},
     }
