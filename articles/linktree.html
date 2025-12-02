@@ -68,12 +68,15 @@
 <h2 id="linktree">linktree<a class="anchor" aria-label="anchor" href="#linktree"></a>
 </h2>
 <p>The goal of <code>linktree</code> is to estimate the <em>group
-transmission assortativity coefficient</em>. More information <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037" class="external-link">here</a>.</p>
+transmission assortativity coefficient</em>. Details about the method
+are published <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037" class="external-link">here</a>.</p>
 <div class="section level3">
 <h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load_gh.html" class="external-link">p_load_gh</a></span><span class="op">(</span><span class="st">"CyGei/linktree"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"CyGei/linktree"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/CyGei/linktree" class="external-link">linktree</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="transmission-assortativity">Transmission assortativity<a class="anchor" aria-label="anchor" href="#transmission-assortativity"></a>
@@ -143,7 +146,7 @@ and
 <span><span class="va">gamma</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/delta2gamma.html">delta2gamma</a></span><span class="op">(</span><span class="va">delta</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gamma</span>, <span class="va">delta</span>, type <span class="op">=</span> <span class="st">"l"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0</span>, col <span class="op">=</span> <span class="st">"red"</span>, pch <span class="op">=</span> <span class="fl">16</span><span class="op">)</span>  <span class="co"># Homogeneous</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-3-1.png" class="r-plt" width="100%" style="display: block; margin: auto;"></p>
+<p><img src="linktree_files/figure-html/unnamed-chunk-4-1.png" class="r-plt" width="100%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level4">
 <h4 id="estimation">Estimation<a class="anchor" aria-label="anchor" href="#estimation"></a>
@@ -238,7 +241,7 @@ group.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">est_delta</span>, main <span class="op">=</span> <span class="st">"Estimated vs True assortativity coefficients"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h <span class="op">=</span> <span class="va">true_deltas</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#d53e4f"</span>, <span class="st">"#3288bd"</span><span class="op">)</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="st">"topright"</span>, legend <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"HCW (truth)"</span>, <span class="st">"patient (truth)"</span><span class="op">)</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#d53e4f"</span>, <span class="st">"#3288bd"</span><span class="op">)</span>, bty <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-6-1.png" class="r-plt" width="100%" style="display: block; margin: auto;"></p>
+<p><img src="linktree_files/figure-html/unnamed-chunk-7-1.png" class="r-plt" width="100%" style="display: block; margin: auto;"></p>
 <p>In this example, we estimate that patients are 1.25 times less likely
 to transmit to other patients, while HCWs are 1.34 times more likely to
 transmit to other HCWs (although none are statistically

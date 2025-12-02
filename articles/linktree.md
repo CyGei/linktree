@@ -3,13 +3,15 @@
 ## linktree
 
 The goal of `linktree` is to estimate the *group transmission
-assortativity coefficient*. More information
+assortativity coefficient*. Details about the method are published
 [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037).
 
 ### Installation
 
 ``` r
-pacman::p_load_gh("CyGei/linktree")
+# install.packages("pak")
+pak::pak("CyGei/linktree")
+library(linktree)
 ```
 
 ### Transmission assortativity
@@ -68,7 +70,7 @@ plot(gamma, delta, type = "l")
 points(1, 0, col = "red", pch = 16)  # Homogeneous
 ```
 
-![](reference/figures/README-unnamed-chunk-3-1.png)
+![](linktree_files/figure-html/unnamed-chunk-4-1.png)
 
 #### Estimation
 
@@ -161,7 +163,7 @@ abline(h = true_deltas, col = c("#d53e4f", "#3288bd"), lty = 2)
 legend("topright", legend = c("HCW (truth)", "patient (truth)"), fill = c("#d53e4f", "#3288bd"), bty = "n")
 ```
 
-![](reference/figures/README-unnamed-chunk-6-1.png)
+![](linktree_files/figure-html/unnamed-chunk-7-1.png)
 
 In this example, we estimate that patients are 1.25 times less likely to
 transmit to other patients, while HCWs are 1.34 times more likely to
