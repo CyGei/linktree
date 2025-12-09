@@ -7,13 +7,17 @@
 \method{plot}{linktree}(x, ...)
 }
 \arguments{
-\item{x}{An object of class "linktree" (with subclass "gamma" or "delta").}
+\item{x}{An object of class \code{linktree} (with subclasses \code{gamma}, \code{delta}, or \code{pi}).}
 
-\item{...}{Additional arguments passed to the base \code{plot} function.}
+\item{...}{Additional arguments passed to the base \code{\link[graphics]{plot}} function.}
+}
+\value{
+No return value, called for side effects (produces a plot).
 }
 \description{
-Plots error bars for objects of class "linktree" (with subclasses "gamma", "delta" or "pi").
-The plot includes a horizontal dotted line at y = 1 for subclass "gamma" and y = 0 for subclass "delta", referring to the neutral value.
+Plots error bars for objects of class \code{linktree} (with subclasses \code{gamma}, \code{delta}, or \code{pi}).
+The method displays point estimates with confidence intervals for each group.
+A horizontal dotted line is added at the neutral value: y = 1 for subclass \code{gamma} and y = 0 for subclass \code{delta}.
 }
 \examples{
 from <- c("A", "A", NA, "C", "C", "C")

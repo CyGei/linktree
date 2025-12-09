@@ -1,10 +1,12 @@
 #' Plot linktree objects
 #'
-#' Plots error bars for objects of class "linktree" (with subclasses "gamma", "delta" or "pi").
-#' The plot includes a horizontal dotted line at y = 1 for subclass "gamma" and y = 0 for subclass "delta", referring to the neutral value.
+#' Plots error bars for objects of class \code{linktree} (with subclasses \code{gamma}, \code{delta}, or \code{pi}).
+#' The method displays point estimates with confidence intervals for each group.
+#' A horizontal dotted line is added at the neutral value: y = 1 for subclass \code{gamma} and y = 0 for subclass \code{delta}.
 #'
-#' @param x An object of class "linktree" (with subclass "gamma" or "delta").
-#' @param ... Additional arguments passed to the base `plot` function.
+#' @param x An object of class \code{linktree} (with subclasses \code{gamma}, \code{delta}, or \code{pi}).
+#' @param ... Additional arguments passed to the base \code{\link[graphics]{plot}} function.
+#' @return No return value, called for side effects (produces a plot).
 #'
 #' @examples
 #' from <- c("A", "A", NA, "C", "C", "C")
@@ -39,12 +41,19 @@ plot.linktree <- function(x, ...) {
     ylim <- c(0, 1)
   }
 
-  plot(x_values, est, xlim = c(0.5, length(groups) + 0.5),
-       ylim = ylim,
-       xaxt = "n", xlab = "Group", ylab = ylab, pch = 16, ...)
+  plot(
+    x_values,
+    est,
+    xlim = c(0.5, length(groups) + 0.5),
+    ylim = ylim,
+    xaxt = "n",
+    xlab = "Group",
+    ylab = ylab,
+    pch = 16,
+    ...
+  )
 
-  arrows(x_values, lwr, x_values, upr,
-         angle = 90, code = 3, length = 0.1)
+  arrows(x_values, lwr, x_values, upr, angle = 90, code = 3, length = 0.1)
 
   axis(1, at = x_values, labels = groups)
 
@@ -55,4 +64,3 @@ plot.linktree <- function(x, ...) {
     abline(h = 0, lty = 3)
   }
 }
-
