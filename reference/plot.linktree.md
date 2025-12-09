@@ -1,9 +1,10 @@
 # Plot linktree objects
 
-Plots error bars for objects of class "linktree" (with subclasses
-"gamma", "delta" or "pi"). The plot includes a horizontal dotted line at
-y = 1 for subclass "gamma" and y = 0 for subclass "delta", referring to
-the neutral value.
+Plots error bars for objects of class `linktree` (with subclasses
+`gamma`, `delta`, or `pi`). The method displays point estimates with
+confidence intervals for each group. A horizontal dotted line is added
+at the neutral value: y = 1 for subclass `gamma` and y = 0 for subclass
+`delta`.
 
 ## Usage
 
@@ -16,11 +17,17 @@ plot(x, ...)
 
 - x:
 
-  An object of class "linktree" (with subclass "gamma" or "delta").
+  An object of class `linktree` (with subclasses `gamma`, `delta`, or
+  `pi`).
 
 - ...:
 
-  Additional arguments passed to the base `plot` function.
+  Additional arguments passed to the base
+  [`plot`](https://rdrr.io/r/graphics/plot.default.html) function.
+
+## Value
+
+No return value, called for side effects (produces a plot).
 
 ## Examples
 

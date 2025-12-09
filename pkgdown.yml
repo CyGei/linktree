@@ -3,7 +3,7 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   linktree: linktree.html
-last_built: 2025-12-02T20:07Z
+last_built: 2025-12-09T19:18Z
 urls:
   reference: https://cygei.github.io/linktree/reference
   article: https://cygei.github.io/linktree/articles
