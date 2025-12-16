@@ -4,8 +4,11 @@ template:
   bslib:
     bootswatch: lux
     pkgdown-nav-height: 100px
+  logo:
+    height: 250px
 repo:
   url:
     home: https://github.com/CyGei/linktree
     issue: https://github.com/CyGei/linktree/issues
     user: https://github.com/CyGei
+    source: https://github.com/CyGei/linktree/blob/main/

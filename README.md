@@ -1,10 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# linktree <a href="https://cygei.github.io/linktree/"><img src="man/figures/logo.png" alt="linktree website" align="right" height="242"/></a>
+# linktree <a href="https://cygei.github.io/linktree/"><img src="man/figures/logo.png"  style="float:right; height:250px;"/></a>
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/linktree)](https://CRAN.R-project.org/package=linktree)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/linktree)](https://CRAN.R-project.org/package=linktree)
 [![CodeFactor](https://www.codefactor.io/repository/github/cygei/linktree/badge)](https://www.codefactor.io/repository/github/cygei/linktree)
 [![R-CMD-check](https://github.com/CyGei/linktree/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CyGei/linktree/actions/workflows/R-CMD-check.yaml)
 
@@ -15,16 +19,10 @@ assortativity*** from transmission trees.
 
 ## Installation
 
-You can install the development version of linktree from
-[GitHub](https://github.com/) with:
+You can install `linktree` from CRAN:
 
 ``` r
-# install.packages("pak")
-pak::pak("CyGei/linktree")
-```
-
-``` r
-library(linktree)
+install.packages("linktree")
 ```
 
 ## Definition
