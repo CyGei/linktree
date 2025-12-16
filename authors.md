@@ -7,6 +7,9 @@
 
 ## Citation
 
+Source:
+[`DESCRIPTION`](https://github.com/CyGei/linktree/blob/main/DESCRIPTION)
+
 Geismar C (2025). *linktree: Estimate Transmission Assortativity
 Coefficients*. R package version 0.1.0,
 <https://github.com/CyGei/linktree>.

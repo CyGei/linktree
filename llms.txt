@@ -5,16 +5,10 @@ assortativity*** from transmission trees.
 
 ## Installation
 
-You can install the development version of linktree from
-[GitHub](https://github.com/) with:
+You can install `linktree` from CRAN:
 
 ``` r
-# install.packages("pak")
-pak::pak("CyGei/linktree")
-```
-
-``` r
-library(linktree)
+install.packages("linktree")
 ```
 
 ## Definition
