@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# linktree <a href="https://cygei.github.io/linktree/"><img src="man/figures/logo.png"  style="float:right; height:250px;"/></a>
+# linktree <a href="https://cygei.github.io/linktree/"><img src="man/figures/logo.png" alt="linktree website" align="right" height="242"/></a>
 
 <!-- badges: start -->
 
