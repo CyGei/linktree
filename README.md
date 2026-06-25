@@ -17,6 +17,8 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/linktree)](https://CRAN
 `linktree` is a novel framework that estimates ***group transmission
 assortativity*** from transmission trees.
 
+📄 [Sorting out assortativity: When can we assess the contributions of different population groups to epidemic transmission?](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037)
+
 ## Installation
 
 You can install `linktree` from CRAN:
