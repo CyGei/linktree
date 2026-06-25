@@ -3,11 +3,16 @@
 `linktree` is a novel framework that estimates ***group transmission
 assortativity*** from transmission trees.
 
+📄 [Sorting out assortativity: When can we assess the contributions of
+different population groups to epidemic
+transmission?](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0313037)
+
 ## Installation
 
 You can install `linktree` from CRAN:
 
 ``` r
+
 install.packages("linktree")
 ```
 
@@ -20,7 +25,7 @@ methodology is described in our
 and briefly discussed on
 [YouTube](https://www.youtube.com/watch?v=Ib5dBunDPN0).
 
-The $\gamma$ coefficient ranges from 0 to $\infty$. It describes the
+The $`\gamma`$ coefficient ranges from 0 to $`\infty`$. It describes the
 excess propability of transmitting within your own group versus other
 groups. See
 [`get_gamma()`](https://cygei.github.io/linktree/reference/get_gamma.md).
@@ -29,8 +34,8 @@ groups. See
 
 gamma assortativity coefficient
 
-We can rescale $\gamma$ to the $\delta$ coefficient, which ranges from
--1 to 1 using
+We can rescale $`\gamma`$ to the $`\delta`$ coefficient, which ranges
+from -1 to 1 using
 [`get_delta()`](https://cygei.github.io/linktree/reference/get_delta.md).
 
 ![delta assortativity coefficient](reference/figures/delta.png)

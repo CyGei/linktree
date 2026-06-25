@@ -9,6 +9,7 @@ assortativity coefficient*. Details about the method are published
 ### Installation
 
 ``` r
+
 # install.packages("pak")
 pak::pak("CyGei/linktree")
 library(linktree)
@@ -32,23 +33,23 @@ infectiousness.
 
 #### Gamma
 
-$\gamma$ ranges from $0$ to $\infty$, where:
+$`\gamma`$ ranges from $`0`$ to $`\infty`$, where:
 
-- $\gamma_{A} = 1$ represents **homogeneous** (random) transmission:  
+- $`\gamma_A = 1`$ represents **homogeneous** (random) transmission:  
   Individuals in group *A* are equally likely to transmit in *A* as in
   other groups.
 
-- $\gamma_{A}$ \>1 indicates **assortative** transmission:  
+- $`\gamma_A`$ \>1 indicates **assortative** transmission:  
   Individuals in group *A* are more likely to transmit in *A* than in
   other groups.
 
-- $\gamma_{A} < 1$ indicates disassortative transmission:  
+- $`\gamma_A < 1`$ indicates disassortative transmission:  
   Individuals in group *A* are less likely to transmit in *A* than in
   other groups.
 
-For example, if $\gamma_{A} = 2$, individuals in group *A* are **twice**
+For example, if $`\gamma_A = 2`$, individuals in group *A* are **twice**
 more likely to transmit within group *A* compared to other groups.
-Conversely, if $\gamma_{A} = 1/2$, individuals in group *A* are **half**
+Conversely, if $`\gamma_A = 1/2`$, individuals in group *A* are **half**
 as likely to transmit within group *A* compared to other groups.
 
 ![](images/gamma.png)
@@ -56,14 +57,15 @@ as likely to transmit within group *A* compared to other groups.
 #### Delta
 
 To simplify interpretation, we introduce a **rescaled** parameter
-$\delta$, ranging between $- 1$ (fully disassortative) and $1$ (fully
-assortative), with 0 indicating homogeneous patterns.
+$`\delta`$, ranging between $`-1`$ (fully disassortative) and $`1`$
+(fully assortative), with 0 indicating homogeneous patterns.
 
 ![](images/delta.png)
 
-We can visualise the relationship between $\gamma$ and $\delta$:
+We can visualise the relationship between $`\gamma`$ and $`\delta`$:
 
 ``` r
+
 delta <- seq(-1, 1, 0.1)
 gamma <- delta2gamma(delta)
 plot(gamma, delta, type = "l")
@@ -74,7 +76,7 @@ points(1, 0, col = "red", pch = 16)  # Homogeneous
 
 #### Estimation
 
-`get_gamma` and `get_delta` estimate $\gamma$ and $\delta$ from a
+`get_gamma` and `get_delta` estimate $`\gamma`$ and $`\delta`$ from a
 transmission tree. It requires the following inputs:
 
 - `from`: a vector of infector’s group (*e.g.* age group, sex,
@@ -98,6 +100,7 @@ see
 for more details.
 
 ``` r
+
 #?sim_tree
 true_gammas <- c(HCW = 2, patient = 1/1.25)
 sizes <- c(HCW = 100, patient = 350)
@@ -116,6 +119,7 @@ head(sim_tree)
 #### Visualise the transmission tree
 
 ``` r
+
 library(epicontacts)
 
 x <- epicontacts::make_epicontacts(
@@ -151,6 +155,7 @@ analyse transmission chains up to the group’s epidemic peak to avoid the
 saturation effect, and we should have at least ~30 cases in the group.
 
 ``` r
+
 est_delta <- get_delta(
   from = sim_tree$source_group,
   to = sim_tree$group,
